@@ -84,8 +84,8 @@ describe('API de Usuários', () => {
 
 ```mermaid
 graph TD;
-    Red[1. Falha (Vermelho)] --> Green[2. Passa (Verde)];
-    Green --> Refactor[3. Refatoração];
+    Red["1. Falha (Vermelho)"] --> Green["2. Passa (Verde)"];
+    Green --> Refactor["3. Refatoração"];
     Refactor --> Red;
     style Red fill:#f99,stroke:#333
     style Green fill:#9f9,stroke:#333

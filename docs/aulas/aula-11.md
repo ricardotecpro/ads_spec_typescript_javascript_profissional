@@ -76,8 +76,8 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 graph TD;
     App[App.tsx] --> Header[Header.tsx];
     App --> Main[MainContent.tsx];
-    Main --> Card[Card.tsx (Generic)];
-    Main --> List[List.tsx (Generic)];
+    Main --> Card["Card.tsx (Generic)"];
+    Main --> List["List.tsx (Generic)"];
     style Card fill:#f9f,stroke:#333
     style List fill:#f9f,stroke:#333
 ```

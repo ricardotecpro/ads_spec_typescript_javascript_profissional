@@ -27,11 +27,11 @@ def test_homepage_structure(page: Page, base_url):
     page.goto(base_url)
     
     # Check title
-    expect(page).to_have_title("Lógica e Algoritmos - Curso")
+    expect(page).to_have_title("TypeScript Profissional")
     
     # Check main heading
     heading = page.locator("h1")
-    expect(heading).to_contain_text("Curso de Algoritmos")
+    expect(heading).to_contain_text("Curso de TypeScript Profissional")
     
     # Check navigation cards exist
     # Material uses .md-typeset .grid.cards
@@ -46,7 +46,7 @@ def test_lesson_01_page(page: Page, base_url):
     
     # Check title (flexible match)
     # The actual title in HTML is "Aula 01 - Lógica e Algoritmos - Curso"
-    expect(page).to_have_title(re.compile(r"Aula 01 - Lógica e Algoritmos"))
+    expect(page).to_have_title(re.compile(r"Aula 01 - Introdução ao TypeScript e Setup Profissional"))
     
     # Check main heading
     heading = page.locator("h1")
@@ -79,9 +79,7 @@ def test_slides_structure(page: Page, base_url):
     """Test that slides are generated correctly."""
     page.goto(f"{base_url}/slides/")
     
-    # Check title contains "Slides"
-    title = page.title()
-    assert "Slides" in title, f"Expected 'Slides' in title, got: {title}"
+    assert "Visão Geral" in title, f"Expected 'Visão Geral' in title, got: {title}"
     
     # Check navigation exists
     # Material MkDocs uses .md-nav but specific page layout might vary
@@ -99,7 +97,7 @@ def test_lesson_16_page(page: Page, base_url):
     
     # Check title
     # Actual: "Aula 16 (PHP) - Lógica e Algoritmos - Curso"
-    expect(page).to_have_title(re.compile(r"Aula 16 \(PHP\)"))
+    expect(page).to_have_title(re.compile(r"Aula 16 - Projeto Final e Deploy"))
     
     # Check quiz containers
     quiz_containers = page.locator(".quiz-container")

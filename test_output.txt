@@ -1,0 +1,17 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.0, pytest-9.0.1, pluggy-1.6.0
+baseurl: http://127.0.0.1:8766
+rootdir: D:\SourceCode\REPOS\github.io\ads_spec_typescript_javascript_profissional
+configfile: pyproject.toml
+plugins: anyio-4.11.0, base-url-2.1.0, cov-7.0.0, mock-3.15.1, playwright-0.7.2
+collected 110 items
+
+tests\test_assets.py .                                                   [  0%]
+tests\test_course_structure.py ........                                  [  8%]
+tests\test_fullscreen.py .                                               [  9%]
+tests\test_layout.py F..F...                                             [ 15%]
+tests\test_navigation.py ....                                            [ 19%]
+tests\test_quizzes.py ......                                             [ 24%]
+tests\test_slides.py ......                                              [ 30%]
+tests\test_termynal_copy.py .                                            [ 30%]
+tests\test_layout.py .                                                   [ 31%]

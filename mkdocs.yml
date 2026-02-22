@@ -114,7 +114,7 @@ plugins:
       date_from_meta:
         datetime_format: '%Y-%m-%d %H:%M:%S'
   - print-site:
-      add_to_navigation: false
+      add_to_navigation: true
       # print_page_rel_path: 'print_page.md' # Deprecated or invalid
       print_page_title: 'Versão para Impressão'
       add_print_site_banner: false
