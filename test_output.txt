@@ -17,3 +17,84 @@ tests\test_termynal_copy.py .                                            [ 30%]
 tests\test_layout.py .                                                   [ 31%]
 tests\test_mermaid_syntax.py ................................            [ 60%]
 tests\test_quizzes.py .                                                  [ 61%]
+tests\test_slides.py .                                                   [ 62%]
+tests\test_quizzes.py .                                                  [ 63%]
+tests\test_slides.py .                                                   [ 64%]
+tests\test_quizzes.py .                                                  [ 65%]
+tests\test_slides.py .                                                   [ 66%]
+tests\test_quizzes.py .                                                  [ 67%]
+tests\test_slides.py .                                                   [ 68%]
+tests\test_quizzes.py .                                                  [ 69%]
+tests\test_slides.py .                                                   [ 70%]
+tests\test_quizzes.py .                                                  [ 70%]
+tests\test_slides.py .                                                   [ 71%]
+tests\test_quizzes.py .                                                  [ 72%]
+tests\test_slides.py .                                                   [ 73%]
+tests\test_quizzes.py .                                                  [ 74%]
+tests\test_slides.py .                                                   [ 75%]
+tests\test_quizzes.py .                                                  [ 76%]
+tests\test_slides.py .                                                   [ 77%]
+tests\test_quizzes.py .                                                  [ 78%]
+tests\test_slides.py .                                                   [ 79%]
+tests\test_quizzes.py .                                                  [ 80%]
+tests\test_slides.py .                                                   [ 80%]
+tests\test_quizzes.py .                                                  [ 81%]
+tests\test_slides.py .                                                   [ 82%]
+tests\test_quizzes.py .                                                  [ 83%]
+tests\test_slides.py .                                                   [ 84%]
+tests\test_quizzes.py .                                                  [ 85%]
+tests\test_slides.py .                                                   [ 86%]
+tests\test_quizzes.py .                                                  [ 87%]
+tests\test_slides.py .                                                   [ 88%]
+tests\test_site_structure.py ...                                         [ 90%]
+tests\test_slide_build.py .....                                          [ 95%]
+tests\test_slide_generation.py .....                                     [100%]
+
+================================== FAILURES ===================================
+______________________ test_homepage_structure[chromium] ______________________
+
+page = <Page url='http://127.0.0.1:8766/'>, base_url = 'http://127.0.0.1:8766'
+
+    def test_homepage_structure(page: Page, base_url):
+        """Test that the homepage loads and has correct structure."""
+        page.set_viewport_size({"width": 1920, "height": 1080})
+        page.goto(base_url)
+    
+        # Check title
+        expect(page).to_have_title("TypeScript Profissional")
+    
+        # Check main heading
+        heading = page.locator("h1")
+        expect(heading).to_contain_text("Curso de TypeScript Profissional")
+    
+        # Check navigation cards exist
+        # Material uses .md-typeset .grid.cards
+        # The cards might be inside a div with class "grid cards"
+        # We can check for the existence of the text "L¾gica S¾lida" which is in the first card
+>       expect(page.get_by_text("L¾gica S¾lida")).to_be_visible()
+E       AssertionError: Locator expected to be visible
+E       Actual value: None
+E       Error: element(s) not found 
+E       Call log:
+E         - Expect "to_be_visible" with timeout 5000ms
+E         - waiting for get_by_text("L¾gica S¾lida")
+
+tests\test_layout.py:40: AssertionError
+_______________________ test_slides_structure[chromium] _______________________
+
+page = <Page url='http://127.0.0.1:8766/slides/'>
+base_url = 'http://127.0.0.1:8766'
+
+    def test_slides_structure(page: Page, base_url):
+        """Test that slides are generated correctly."""
+        page.goto(f"{base_url}/slides/")
+    
+>       assert "VisÒo Geral" in title, f"Expected 'VisÒo Geral' in title, got: {title}"
+                                ^^^^^
+E       NameError: name 'title' is not defined
+
+tests\test_layout.py:82: NameError
+=========================== short test summary info ===========================
+FAILED tests/test_layout.py::test_homepage_structure[chromium] - AssertionErr...
+FAILED tests/test_layout.py::test_slides_structure[chromium] - NameError: nam...
+================== 2 failed, 108 passed in 198.30s (0:03:18) ==================

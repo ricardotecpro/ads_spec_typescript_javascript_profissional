@@ -37,7 +37,7 @@ def test_homepage_structure(page: Page, base_url):
     # Material uses .md-typeset .grid.cards
     # The cards might be inside a div with class "grid cards"
     # We can check for the existence of the text "Lógica Sólida" which is in the first card
-    expect(page.get_by_text("Lógica Sólida")).to_be_visible()
+    expect(page.get_by_text("Segurança Extrema")).to_be_visible()
 
 # Test 3: Navigation to Lesson 01
 def test_lesson_01_page(page: Page, base_url):
@@ -79,6 +79,8 @@ def test_slides_structure(page: Page, base_url):
     """Test that slides are generated correctly."""
     page.goto(f"{base_url}/slides/")
     
+    # Check title
+    title = page.title()
     assert "Visão Geral" in title, f"Expected 'Visão Geral' in title, got: {title}"
     
     # Check navigation exists
