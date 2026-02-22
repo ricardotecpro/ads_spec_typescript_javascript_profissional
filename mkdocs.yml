@@ -1,0 +1,255 @@
+site_name: TypeScript Profissional
+site_url: https://ricardotecpro.github.io/ads_spec_typescript_javascript_profissional/
+repo_url: https://github.com/ricardotecpro/ads_spec_typescript_javascript_profissional
+repo_name: ricardotecpro/ads_spec_typescript_javascript_profissional
+theme:
+  name: material
+  language: pt-BR
+  favicon: assets/images/logo.png
+  logo: assets/images/logo.png
+  custom_dir: overrides
+  features:
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.expand
+    - navigation.top
+    - navigation.footer
+  custom_dir: overrides
+  features:
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.expand
+    - navigation.top
+    - navigation.footer
+    - navigation.indexes
+    - toc.follow
+    - content.code.copy
+    - content.code.annotate
+    - search.suggest
+    - search.highlight
+  palette:
+    # Light Mode (Default)
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Mudar para modo escuro
+    # Dark Mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Mudar para modo claro
+  icon:
+    repo: fontawesome/brands/github
+
+markdown_extensions:
+  - pymdownx.critic
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.details
+  - pymdownx.keys
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - footnotes
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - pymdownx.snippets:
+      base_path: docs
+  - pymdownx.arithmatex:
+      generic: true
+
+
+plugins:
+  - mkdocs-revealjs:
+      config:
+        transition: slide
+        backgroundTransition: fade
+        slideNumber: true
+
+  - search:
+      lang: pt
+  - mkdocs-jupyter
+  - glightbox
+  - mkdocs_quiz
+  - git-authors:
+      show_contribution: true
+      show_line_count: true
+      count_empty_lines: false
+      fallback_to_empty: false
+      sort_authors_by: contribution
+      authorship_threshold_percent: 10
+      exclude:
+        - index.md
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: datetime
+  - macros
+  - mkdocs-video
+  - termynal:
+      title: shell
+      buttons: macos
+      prompt_literal_start:
+        - "$"
+  - rss:
+      match_path: .*
+      date_from_meta:
+        datetime_format: '%Y-%m-%d %H:%M:%S'
+  - print-site:
+      add_to_navigation: false
+      # print_page_rel_path: 'print_page.md' # Deprecated or invalid
+      print_page_title: 'Versão para Impressão'
+      add_print_site_banner: false
+      enumerate_headings: false
+      enumerate_figures: false
+
+hooks:
+  - hooks/copy_slides.py
+
+extra_css:
+  - assets/css/quiz.css
+  - assets/css/home.css
+  - assets/css/extra.css
+  - https://cdn.jsdelivr.net/npm/termynal/termynal.css
+
+extra_javascript:
+  - assets/js/quiz.js
+  - https://unpkg.com/mermaid@11.12.3/dist/mermaid.min.js
+  - assets/js/mermaid-init.js
+  - assets/js/custom_termynal.js
+  - assets/js/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://cdn.jsdelivr.net/npm/termynal/termynal.min.js
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ricardotecpro
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/ricardotecpro
+    - icon: fontawesome/solid/globe
+      link: https://ricardotecpro.github.io/
+  version:
+    provider: mike
+    default: estavel
+
+nav:
+  - Inicio: index.md
+  - Sobre: sobre.md
+
+  - Aulas:
+    - Visão Geral: aulas/index.md
+    - 'Aula 01 - Introdução ao TypeScript e Setup Profissional 🧠': aulas/aula-01.md
+    - 'Aula 02 - Tipos Fundamentais e Inferência 🛠️': aulas/aula-02.md
+    - 'Aula 03 - Tipos Avançados 🧩': aulas/aula-03.md
+    - 'Aula 04 - Interfaces e Modelagem de Domínio 🏗️': aulas/aula-04.md
+    - 'Aula 05 - Classes e Programação Orientada a Objetos 🏛️': aulas/aula-05.md
+    - 'Aula 06 - Generics (Programação Genérica) 📦': aulas/aula-06.md
+    - 'Aula 07 - Utility Types e Manipulação de Tipos ⚙️': aulas/aula-07.md
+    - 'Aula 08 - Manipulação Avançada de Tipos 🧪': aulas/aula-08.md
+    - 'Aula 09 - Módulos e Organização Profissional 📁': aulas/aula-09.md
+    - 'Aula 10 - TypeScript com Node.js (Backend) 🟢': aulas/aula-10.md
+    - 'Aula 11 - TypeScript com Frontend Moderno ⚛️': aulas/aula-11.md
+    - 'Aula 12 - Integração com APIs e Tipagem de Dados Externos 📡': aulas/aula-12.md
+    - 'Aula 13 - Testes com TypeScript 🧪': aulas/aula-13.md
+    - 'Aula 14 - Padrões de Projeto com TypeScript 🛡️': aulas/aula-14.md
+    - 'Aula 15 - Clean Code e Arquitetura 📐': aulas/aula-15.md
+    - 'Aula 16 - Projeto Final e Deploy 🚀': aulas/aula-16.md
+
+  - Exercicios:
+    - VisÃ£o Geral: exercicios/index.md
+    - 'Exercicio 01': exercicios/exercicio-01.md
+    - 'Exercicio 02': exercicios/exercicio-02.md
+    - 'Exercicio 03': exercicios/exercicio-03.md
+    - 'Exercicio 04': exercicios/exercicio-04.md
+    - 'Exercicio 05': exercicios/exercicio-05.md
+    - 'Exercicio 06': exercicios/exercicio-06.md
+    - 'Exercicio 07': exercicios/exercicio-07.md
+    - 'Exercicio 08': exercicios/exercicio-08.md
+    - 'Exercicio 09': exercicios/exercicio-09.md
+    - 'Exercicio 10': exercicios/exercicio-10.md
+    - 'Exercicio 11': exercicios/exercicio-11.md
+    - 'Exercicio 12': exercicios/exercicio-12.md
+    - 'Exercicio 13': exercicios/exercicio-13.md
+    - 'Exercicio 14': exercicios/exercicio-14.md
+    - 'Exercicio 15': exercicios/exercicio-15.md
+    - 'Exercicio 16': exercicios/exercicio-16.md
+
+  - Projetos:
+    - Visão Geral: projetos/index.md
+    - 'Projeto 01': projetos/projeto-01.md
+    - 'Projeto 02': projetos/projeto-02.md
+    - 'Projeto 03': projetos/projeto-03.md
+    - 'Projeto 04': projetos/projeto-04.md
+    - 'Projeto 05': projetos/projeto-05.md
+    - 'Projeto 06': projetos/projeto-06.md
+    - 'Projeto 07': projetos/projeto-07.md
+    - 'Projeto 08': projetos/projeto-08.md
+    - 'Projeto 09': projetos/projeto-09.md
+    - 'Projeto 10': projetos/projeto-10.md
+    - 'Projeto 11': projetos/projeto-11.md
+    - 'Projeto 12': projetos/projeto-12.md
+    - 'Projeto 13': projetos/projeto-13.md
+    - 'Projeto 14': projetos/projeto-14.md
+    - 'Projeto 15': projetos/projeto-15.md
+    - 'Projeto 16': projetos/projeto-16.md
+
+  - Quizzes:
+    - VisÃ£o Geral: quizzes/index.md
+    - 'Quiz 01': quizzes/quiz-01.md
+    - 'Quiz 02': quizzes/quiz-02.md
+    - 'Quiz 03': quizzes/quiz-03.md
+    - 'Quiz 04': quizzes/quiz-04.md
+    - 'Quiz 05': quizzes/quiz-05.md
+    - 'Quiz 06': quizzes/quiz-06.md
+    - 'Quiz 07': quizzes/quiz-07.md
+    - 'Quiz 08': quizzes/quiz-08.md
+    - 'Quiz 09': quizzes/quiz-09.md
+    - 'Quiz 10': quizzes/quiz-10.md
+    - 'Quiz 11': quizzes/quiz-11.md
+    - 'Quiz 12': quizzes/quiz-12.md
+    - 'Quiz 13': quizzes/quiz-13.md
+    - 'Quiz 14': quizzes/quiz-14.md
+    - 'Quiz 15': quizzes/quiz-15.md
+    - 'Quiz 16': quizzes/quiz-16.md
+
+  - Slides:
+    - VisÃ£o Geral: slides/index.md
+    - 'Slide 01': slides/slide-01.md
+    - 'Slide 02': slides/slide-02.md
+    - 'Slide 03': slides/slide-03.md
+    - 'Slide 04': slides/slide-04.md
+    - 'Slide 05': slides/slide-05.md
+    - 'Slide 06': slides/slide-06.md
+    - 'Slide 07': slides/slide-07.md
+    - 'Slide 08': slides/slide-08.md
+    - 'Slide 09': slides/slide-09.md
+    - 'Slide 10': slides/slide-10.md
+    - 'Slide 11': slides/slide-11.md
+    - 'Slide 12': slides/slide-12.md
+    - 'Slide 13': slides/slide-13.md
+    - 'Slide 14': slides/slide-14.md
+    - 'Slide 15': slides/slide-15.md
+    - 'Slide 16': slides/slide-16.md
+
+  - Setups:
+    - VisÃ£o Geral: setups/index.md
