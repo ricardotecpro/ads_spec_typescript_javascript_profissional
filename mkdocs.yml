@@ -233,7 +233,7 @@ nav:
     - 'Quiz 16': quizzes/quiz-16.md
 
   - Slides:
-    - VisÃ£o Geral: slides/index.md
+    - Visão Geral: slides/index.md
     - 'Slide 01': slides/slide-01.md
     - 'Slide 02': slides/slide-02.md
     - 'Slide 03': slides/slide-03.md
@@ -252,4 +252,4 @@ nav:
     - 'Slide 16': slides/slide-16.md
 
   - Setups:
-    - VisÃ£o Geral: setups/index.md
+    - Visão Geral: setups/index.md
